@@ -15,10 +15,10 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Install devs
-      run: npm ci
-    - name: Run tests
-      run: npm run test
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install devs
+        run: npm ci
+      - name: Test
+        run: npm run test
