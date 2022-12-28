@@ -18,3 +18,17 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node: [16, 18]
+
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Install devs
+      run: npm ci
+    - name: Run tests
+      run: npm run test
