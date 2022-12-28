@@ -4,13 +4,16 @@ on: push
 jobs:
   lint:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [16, 18]
+
+    name: Node ${{ matrix.node }} sample
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
       - name: Install devs
         run: npm ci
       - name: Lint
