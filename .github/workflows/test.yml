@@ -1,0 +1,12 @@
+name: Test Nest app
+on: push
+
+jobs:
+  test:
+    steps:
+      - name: Copy repository code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm run test
