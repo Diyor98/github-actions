@@ -39,7 +39,7 @@ jobs:
 
   build:
     needs: [lint, test]
-
+    # continue-on-error: true     continue CI/CD even if failure occurs
     strategy:
       matrix:
         node-version: [14, 16]
