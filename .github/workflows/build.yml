@@ -9,7 +9,7 @@ jobs:
       - name: Copy repository code
         uses: actions/checkout@v3
       - name: Install deps
-        uses: npm ci
+        run: npm ci
       - name: Build project
         run: npm run build
       - name: Upload Artifact
